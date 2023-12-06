@@ -1,0 +1,58 @@
+body {
+    font-family: 'Quattrocento', serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    border: 20px solid #e41b23; 
+    border-radius: 20px;
+
+}
+
+h1 {
+    color: #e41b23;
+    text-align: left;
+    font-size: 190px;
+    font-weight: 50px;
+    font-family: 'Quattrocento', serif;
+    letter-spacing: 9px;
+    margin: 0px;
+    
+
+}
+
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Quattrocento', serif;
+    
+}
+
+.scheduler-container {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #e41b23;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Quattrocento', serif;
+}
+
+button:hover {
+    background-color: #bb1502;
+    font-family: 'Quattrocento', serif;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+
+
+
