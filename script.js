@@ -1,24 +1,31 @@
 function scheduleMeeting() {
+    //get the value of the input
     const dateTimeInput = document.getElementById('dateTime');
     const dateTimeValue = dateTimeInput.value;
 
     fetch('https://meeting-scheduler-h9eo.onrender.com/schedule-meeting', {
-        method: 'POST',
+       //using POST method to get information and put it into json
+    method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
+        //turn it into a string the datetimevalue so it can be put in the html 
         body: JSON.stringify({
             dateTime: dateTimeValue,
         }),
     })
+
+    //start it and wait
     .then(response => response.json())
+
+    //it got it, now put it into html 
     .then(data => {
         const timezoneResult = document.getElementById('timezoneResult');
 
         // Clear previous results
         timezoneResult.innerHTML = '';
 
-        // Display scheduled times with random styles
+        // Display scheduled times with random styles, going through all of them in a loop
         data.scheduledTimes.forEach((time, index) => {
             const city = data.timeZones[index];
 
@@ -28,7 +35,7 @@ function scheduleMeeting() {
             // Apply random styles for each time zone
             applyRandomStyles(timezoneItem);
 
-            // Display in timezoneResult
+            // Display in timezoneResult and "append" add the timezoneitem which include city and time
             timezoneItem.innerHTML = `Scheduled meeting in ${city}: ${time}`;
             timezoneResult.appendChild(timezoneItem);
         });
